@@ -35,7 +35,26 @@
     </form>
 
     <hr />
-
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Location</th>
+            <th>Position Type</th>
+            <th>Core Competency</th>
+        </tr>
+        </thead>
+        <tr th:each="job: ${jobs}">
+            <td th:text="${job.id}"></td>
+            <td th:text="${job.name}"></td>
+            <td th:text="${job.employer}"></td>
+            <td th:text="${job.location}"></td>
+            <td th:text="${job.positionType}"></td>
+            <td th:text="${job.coreCompetency}"></td>
+        </tr>
+    </table>
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
 </div>
