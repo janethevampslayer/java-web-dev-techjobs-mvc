@@ -27,14 +27,6 @@ public class SearchController {
 
     @RequestMapping(value="results")
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
-
-        model.addAttribute("columns", columnChoices);
-        model.addAttribute("employers", JobData.getAllEmployers());
-        model.addAttribute("locations", JobData.getAllLocations());
-        model.addAttribute("positions", JobData.getAllPositionTypes());
-        model.addAttribute("skills", JobData.getAllCoreCompetency());
-        model.addAttribute("all", JobData.findAll());
-
         ArrayList<Job> jobs;
         if (searchTerm.toLowerCase().equals("all") || searchTerm.equals("")) {
             jobs = (JobData.findAll());
